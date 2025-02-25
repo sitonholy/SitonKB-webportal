@@ -1,5 +1,5 @@
 <template>
-  <div class="top-menu-container flex align-center h-full">
+  <div class="side-menu-container">
     <MenuItem
       :menu="menu"
       v-hasPermission="menu.meta?.permission"
@@ -18,6 +18,10 @@ const topMenuList = computed(() => {
   return getChildRouteListByPathAndName('/', 'home')
 })
 </script>
-<style lang="scss" scope>
-
+<style lang="scss" scoped>
+.side-menu-container {
+  height: calc(100% - 112px);
+  box-sizing: border-box;
+  overflow-y: auto;
+}
 </style>

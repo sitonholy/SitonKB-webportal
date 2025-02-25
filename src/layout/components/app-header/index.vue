@@ -9,11 +9,14 @@
       :closable="false"
     />
     <TopBar />
+    <!-- <div style="padding: 0 10px">
+      <el-button type="primary" style="width: 100%"> 退出 </el-button>
+    </div> -->
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { computed } from 'vue'
 import TopBar from '../top-bar/index.vue'
 import useStore from '@/stores'
 const { user } = useStore()
@@ -24,11 +27,14 @@ const isDefaultTheme = computed(() => {
 
 <style lang="scss" scoped>
 .app-header {
-  background: var(--app-header-bg-color);
-  position: fixed;
-  width: 100%;
-  left: 0;
-  top: 0;
-  z-index: 100;
+  // height: calc(100% - 112px);
+  box-sizing: border-box;
+  overflow-y: auto;
+  background-color: #e9effe;
+  // position: fixed;
+  // width: 100%;
+  // left: 0;
+  // top: 0;
+  // z-index: 100;
 }
 </style>
