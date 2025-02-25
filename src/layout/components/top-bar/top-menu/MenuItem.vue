@@ -1,6 +1,6 @@
 <template>
   <div
-    class="menu-item-container flex-center h-full"
+    class="menu-item-container"
     :class="isActive ? 'active' : ''"
     @click="router.push({ name: menu.name })"
   >
@@ -29,10 +29,12 @@ const isActive = computed(() => {
 </script>
 <style lang="scss" scoped>
 .menu-item-container {
-  margin-right: 28px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   position: relative;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
 
   .icon {
     font-size: 15px;
@@ -40,22 +42,11 @@ const isActive = computed(() => {
     margin-top: 2px;
   }
 
-  &:hover {
-    color: var(--el-color-primary);
-  }
 }
 
 .active {
   color: var(--el-color-primary);
-
-  &::after {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    content: '';
-    background-color: var(--el-color-primary-light-9);
-    border-bottom: 3px solid var(--el-color-primary);
-  }
+  background-image: linear-gradient(90deg, #89a9f1 0%, #4980fb 100%);
+  color: #ffffff !important;
 }
 </style>
